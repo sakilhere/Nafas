@@ -1,9 +1,14 @@
+
 {
   "name": "nafas-portfolio",
   "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "22.x"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "@vercel/kv": "^2.0.0",
@@ -12,9 +17,12 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vercel/node": "^3.2.0",
-    "typescript": "^5.5.3"
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.1"
   }
 }
