@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Music, Star, Users, Send, Heart, Quote, Menu, X, Instagram, Mail, Phone, MessageSquare, CheckCircle, LoaderCircle } from 'lucide-react';
 import { Artist, PricingTier, Testimonial, BookingForm, TestimonialForm } from '../types';
+import Chatbot from './Chatbot';
 
 const useIsVisible = (ref: React.RefObject<HTMLElement>, options?: IntersectionObserverInit & { triggerOnce?: boolean }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -578,6 +579,12 @@ const NafasPortfolio: React.FC = () => {
     ? new Date(bookingForm.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })
     : 'Not specified';
 
+  const navigateToSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+    // Optionally, scroll to the section
+    // document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const CelebrationParticles: React.FC = () => {
     return (
       <>
@@ -919,6 +926,7 @@ const NafasPortfolio: React.FC = () => {
             </div>
         </div>
       </footer>
+      <Chatbot navigateToSection={navigateToSection} />
     </div>
   );
 };
